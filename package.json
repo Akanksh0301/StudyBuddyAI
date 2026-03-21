@@ -1,0 +1,29 @@
+{
+  "name": "stitch_ai_tutor_chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"vite frontend\" \"node backend/server.js\"",
+    "vite:dev": "vite frontend",
+    "server": "node backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.0.1"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cohere-ai": "^7.20.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1"
+  }
+}

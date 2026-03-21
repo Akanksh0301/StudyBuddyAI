@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "surface-bright": "#f7f9fc",
+              "secondary": "#006b5f",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#07006c",
+              "on-tertiary-container": "#fefcff",
+              "on-error": "#ffffff",
+              "outline-variant": "#c7c4d7",
+              "surface-tint": "#494bd6",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e0e3e6",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#2170e4",
+              "primary": "#4648d4",
+              "background": "#f7f9fc",
+              "outline": "#767586",
+              "inverse-primary": "#c0c1ff",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-container-low": "#f2f4f7",
+              "surface-dim": "#d8dadd",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#4fdbc8",
+              "primary-fixed-dim": "#c0c1ff",
+              "secondary-container": "#6df5e1",
+              "on-secondary-fixed-variant": "#005048",
+              "surface": "#f7f9fc",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#6063ee",
+              "tertiary-fixed-dim": "#adc6ff",
+              "on-primary-container": "#fffbff",
+              "surface-container-high": "#e6e8eb",
+              "surface-container": "#eceef1",
+              "on-surface-variant": "#464554",
+              "primary-fixed": "#e1e0ff",
+              "secondary-fixed": "#71f8e4",
+              "on-secondary-fixed": "#00201c",
+              "surface-container-highest": "#e0e3e6",
+              "on-secondary-container": "#006f64",
+              "on-background": "#191c1e",
+              "inverse-on-surface": "#eff1f4",
+              "tertiary-fixed": "#d8e2ff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#001a42",
+              "inverse-surface": "#2d3133",
+              "on-surface": "#191c1e",
+              "tertiary": "#0058be",
+              "on-tertiary-fixed-variant": "#004395"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #4648d4 0%, #6063ee 100%);
+        }
+        .secondary-gradient {
+            background: linear-gradient(135deg, #006b5f 0%, #6df5e1 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+      <meta name="view-transition" content="same-origin" />
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Navigation Drawer -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-[#F8F9FA] dark:bg-slate-900 flex flex-col p-6 gap-y-2">
+  <!-- Title -->
+  <h1 class="font-headline text-[22px] font-bold tracking-tight text-indigo-600 mb-6 mt-2">StudyBuddy AI</h1>
+  
+  <!-- Profile Header -->
+  <div class="flex items-center gap-x-3 mb-6">
+    <div class="w-12 h-12 rounded-full bg-orange-200 overflow-hidden flex-shrink-0">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=ffd5dc" alt="Avatar" class="w-full h-full object-cover">
+    </div>
+    <div>
+      <h2 id="sidebar-level" class="font-headline text-[14px] font-bold text-slate-800 leading-tight">Level 12 Architect</h2>
+      <p id="sidebar-xp" class="text-[12px] text-slate-500 font-medium mt-0.5">450 XP to Level 13</p>
+    </div>
+  </div>
+
+  <nav class="flex-1 space-y-1">
+
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 rounded-2xl px-5 py-3 transition-colors" href="/">
+      <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+      <span class="font-medium text-[14px]">Dashboard</span>
+    </a>
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 rounded-2xl px-5 py-3 transition-colors" href="/learn.html">
+      <span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+      <span class="font-medium text-[14px]">Learn</span>
+    </a>
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 rounded-2xl px-5 py-3 transition-colors" href="/quiz.html">
+      <span class="material-symbols-outlined text-[20px]" data-icon="help_center">help_center</span>
+      <span class="font-medium text-[14px]">Quiz Arena</span>
+    </a>
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 rounded-2xl px-5 py-3 transition-colors" href="/progress.html">
+      <span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
+      <span class="font-medium text-[14px]">Progress</span>
+    </a>
+    <a class="flex items-center space-x-4 bg-white text-indigo-600 shadow-sm rounded-2xl px-5 py-3 transition-colors" href="/analytics.html">
+      <span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
+      <span class="font-medium text-[14px]">Analytics</span>
+    </a>
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 rounded-2xl px-5 py-3 transition-colors" href="/achievements.html">
+      <span class="material-symbols-outlined text-[20px]" data-icon="emoji_events">emoji_events</span>
+      <span class="font-medium text-[14px]">Achievements</span>
+    </a>
+  </nav>
+
+  <div class="mt-auto pt-6">
+    <a class="flex items-center space-x-4 text-slate-500 hover:bg-slate-100 hover:text-slate-700 px-5 py-3 rounded-2xl transition-colors" href="#">
+      <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+      <span class="font-medium text-[14px]">Settings</span>
+    </a>
+  </div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-800/50 flex items-center justify-between px-8 h-20">
+<h2 class="font-headline text-lg font-bold text-indigo-600">Analytics</h2>
+<div class="flex items-center space-x-4">
+<button class="hover:bg-slate-50 p-2.5 rounded-full transition-colors text-slate-500 hover:text-slate-700 flex items-center justify-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+</button>
+<button class="hover:bg-slate-50 p-2.5 rounded-full transition-colors relative text-slate-500 hover:text-slate-700 flex items-center justify-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+<span class="absolute top-[6px] right-[6px] w-[9px] h-[9px] bg-[#cc292b] rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 p-8 min-h-screen">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Hero Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Total XP</span>
+<span id="analytics-total-xp" class="font-headline text-3xl font-extrabold text-primary">12,450</span>
+<span class="text-xs text-secondary font-medium mt-2 flex items-center">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="trending_up">trending_up</span>
+                        +12% vs last month
+                    </span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Study Streak</span>
+<span class="font-headline text-3xl font-extrabold text-on-surface">18 Days</span>
+<span class="text-xs text-on-surface-variant font-medium mt-2">Personal Best: 24 days</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Quiz Accuracy</span>
+<span class="font-headline text-3xl font-extrabold text-secondary">88.4%</span>
+<span class="text-xs text-secondary font-medium mt-2 flex items-center">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="check_circle">check_circle</span>
+                        Mastery level: High
+                    </span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none flex flex-col">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Time Invested</span>
+<span class="font-headline text-3xl font-extrabold text-on-surface">142h</span>
+<span class="text-xs text-on-surface-variant font-medium mt-2">Active learning time</span>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-12 gap-6">
+<!-- XP Over Time - Line Chart Panel -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-headline text-xl font-bold">XP Progression</h3>
+<p class="text-sm text-on-surface-variant">Daily experience points earned over the last 30 days</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-bold bg-white rounded-md shadow-sm text-primary">30D</button>
+<button class="px-3 py-1 text-xs font-bold text-on-surface-variant">90D</button>
+</div>
+</div>
+<!-- Simulated Line Chart -->
+<div class="h-64 flex items-end justify-between gap-1 relative">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+</div>
+<div class="w-full h-full relative z-10">
+<!-- SVG for Line Chart -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 200">
+<path d="M0,180 Q100,160 200,120 T400,140 T600,60 T800,40" fill="none" stroke="#4648d4" stroke-width="3"></path>
+<path d="M0,180 Q100,160 200,120 T400,140 T600,60 T800,40 L800,200 L0,200 Z" fill="url(#grad1)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#4648d4;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#4648d4;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<circle cx="200" cy="120" fill="#4648d4" r="5"></circle>
+<circle cx="600" cy="60" fill="#4648d4" r="5"></circle>
+</svg>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</div>
+<!-- Topic Mastery - Pie Chart Panel -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<h3 class="font-headline text-xl font-bold mb-2">Topic Mastery</h3>
+<p class="text-sm text-on-surface-variant mb-8">Skill distribution across current curriculum</p>
+<div class="relative h-48 flex items-center justify-center">
+<!-- Custom CSS Pie Chart representation -->
+<div class="w-40 h-40 rounded-full border-[16px] border-slate-100 relative">
+<div class="absolute inset-0 rounded-full border-[16px] border-primary border-t-transparent border-r-transparent rotate-45"></div>
+<div class="absolute inset-0 rounded-full border-[16px] border-secondary border-b-transparent border-l-transparent -rotate-12"></div>
+<div class="flex flex-col items-center justify-center h-full">
+<span class="text-2xl font-extrabold font-headline">72%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Overall</span>
+</div>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center">
+<div class="w-2 h-2 rounded-full bg-primary mr-2"></div>
+<span class="font-medium">Cloud Systems</span>
+</div>
+<span class="font-bold">45%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center">
+<div class="w-2 h-2 rounded-full bg-secondary mr-2"></div>
+<span class="font-medium">Data Ethics</span>
+</div>
+<span class="font-bold">30%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center">
+<div class="w-2 h-2 rounded-full bg-slate-200 mr-2"></div>
+<span class="font-medium">Algorithms</span>
+</div>
+<span class="font-bold">25%</span>
+</div>
+</div>
+</div>
+<!-- Quiz Performance - Bar Chart Panel -->
+<div class="col-span-12 lg:col-span-6 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<h3 class="font-headline text-xl font-bold mb-2">Quiz Performance</h3>
+<p class="text-sm text-on-surface-variant mb-8">Score breakdown by subject area</p>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tight">
+<span>Architecture Fundamentals</span>
+<span class="text-primary">92%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full primary-gradient rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tight">
+<span>Security Protocols</span>
+<span class="text-primary">78%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full primary-gradient rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tight">
+<span>Quantum Logic</span>
+<span class="text-primary">64%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full primary-gradient rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tight">
+<span>System Reliability</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full primary-gradient rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Heatmap Panel -->
+<div class="col-span-12 lg:col-span-6 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-headline text-xl font-bold">Study Intensity</h3>
+<p class="text-sm text-on-surface-variant">Daily activity heatmap for the past 6 months</p>
+</div>
+</div>
+<div class="grid grid-cols-24 gap-1.5 overflow-hidden">
+<!-- Heatmap Grid Simulation (Simplified) -->
+<div class="flex flex-col gap-1.5">
+<div class="w-full aspect-square rounded-sm bg-slate-100"></div>
+<div class="w-full aspect-square rounded-sm bg-slate-100"></div>
+<div class="w-full aspect-square rounded-sm bg-secondary opacity-30"></div>
+<div class="w-full aspect-square rounded-sm bg-secondary opacity-60"></div>
+<div class="w-full aspect-square rounded-sm bg-secondary"></div>
+<div class="w-full aspect-square rounded-sm bg-secondary opacity-30"></div>
+<div class="w-full aspect-square rounded-sm bg-slate-100"></div>
+</div>
+<!-- Repeated for visual effect -->
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-40"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-90"></div><div class="w-full aspect-square rounded-sm bg-secondary"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-secondary opacity-40"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-80"></div><div class="w-full aspect-square rounded-sm bg-secondary"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-60"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-30"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-10"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-50"></div><div class="w-full aspect-square rounded-sm bg-secondary"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-secondary opacity-10"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-40"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-80"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-40"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-secondary opacity-60"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-90"></div><div class="w-full aspect-square rounded-sm bg-secondary"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-80"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-50"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-30"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-60"></div><div class="w-full aspect-square rounded-sm bg-secondary"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-30"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+<div class="flex flex-col gap-1.5"><div class="w-full aspect-square rounded-sm bg-secondary opacity-100"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-80"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-60"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-40"></div><div class="w-full aspect-square rounded-sm bg-secondary opacity-20"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div><div class="w-full aspect-square rounded-sm bg-slate-100"></div></div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex items-center space-x-2 text-xs text-on-surface-variant font-medium">
+<span>Less</span>
+<div class="flex space-x-1">
+<div class="w-3 h-3 rounded-sm bg-slate-100"></div>
+<div class="w-3 h-3 rounded-sm bg-secondary opacity-30"></div>
+<div class="w-3 h-3 rounded-sm bg-secondary opacity-60"></div>
+<div class="w-3 h-3 rounded-sm bg-secondary opacity-90"></div>
+<div class="w-3 h-3 rounded-sm bg-secondary"></div>
+</div>
+<span>More</span>
+</div>
+<p class="text-xs text-on-surface-variant italic">Peak activity: Tuesdays 18:00 - 20:00</p>
+</div>
+</div>
+</div>
+<!-- Footer Meta Info -->
+<div class="flex items-center justify-between text-on-surface-variant py-8 border-t border-slate-100">
+<p class="text-sm">Data last synced: Today at 09:42 AM</p>
+<div class="flex space-x-6">
+<button class="text-xs font-bold uppercase tracking-widest text-primary hover:underline">Export CSV</button>
+<button class="text-xs font-bold uppercase tracking-widest text-primary hover:underline">Download PDF Report</button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB (Floating Action Button) - Contextually Suppressed on Analytics but kept for 'Ask AI' utility -->
+<button class="fixed bottom-8 right-8 primary-gradient text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-50">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<script src="xp_system.js"></script>
+</body></html>
