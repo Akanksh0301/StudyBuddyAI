@@ -238,8 +238,7 @@ Supports:
 **Akanksha Chougule**
 
 - GitHub: https://github.com/Akanksh0301  
-- LinkedIn: Add your LinkedIn link
-
+  
 ---
 
 ## ⭐ Project Goal
